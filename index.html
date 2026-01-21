@@ -513,19 +513,16 @@ function loadBracket(url) {
   
     console.log("📄 Respuesta cruda GViz recibida");
 
-    const json = JSON.parse(text.substring(47).slice(0, -2));
-    const rows = json.table.rows;
+    const jsonBracket = JSON.parse(text.substring(47).slice(0, -2));
+    const rowsBracket = json.table.rows;
 
-    console.log("📊 Total de filas leídas en Bracket:", rows.length);
+    console.log("📊 Total de filas leídas en Bracket:", rowsBracket.length);
 
-    if (rows.length === 0) {
+    if (rowsBracket.length === 0) {
       alert("⚠️ La pestaña Bracket está vacía o no se leyó correctamente");  
 	}
-		
-    const json = JSON.parse(text.substring(47).slice(0, -2));
-    const rows = json.table.rows;
 
-    rows.forEach((row, index) => {
+    rowsBracket.forEach((row, index) => {
 		
 		console.log(`➡️ Fila ${index + 1} completa:`, row.c);
 	
@@ -542,7 +539,7 @@ function loadBracket(url) {
 		console.log("🆔 matchId:", matchId, "| Jornada:", Jornada);
       
           // 🔹 INYECTAR Jornadas por jugar EN EL BODY
-          const Jor1 = document.getElementById("J1");
+          const Jor1 = document.getElementById("Jornada-1");
           if (Jor1 && Jornada) {
             Jor1.textContent = Jornada;
           }
