@@ -517,7 +517,7 @@ function loadBracket(url) {
       const time    = row.c[6]?.v || "";
       
 	  
-	  const IdMatch = matchId + "-" + Jornada;
+	  const IdMatch = `${matchId)-${Jornada}`;
 
       const card = document.querySelector(`[data-match="${IdMatch}"]`);
       if (!card) return;
